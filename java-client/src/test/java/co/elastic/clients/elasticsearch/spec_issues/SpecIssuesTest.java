@@ -296,6 +296,17 @@ public class SpecIssuesTest extends ModelTestCase {
                 .trackTotalHits(thb -> thb.enabled(false)), JsonData.class);
     }
 
+    @Test
+    public void i0558_boxplotAggregation() {
+        // https://github.com/elastic/elasticsearch-java/issues/558
+        SearchResponse<JsonData> resp = loadRsrc("issue-0558-response.json",
+            SearchResponse.createSearchResponseDeserializer(JsonData._DESERIALIZER));
+
+        assertEquals(
+            286.5,
+            resp.aggregations().get("ed_stats").boxPlot().q1());
+    }
+
     private <T> T loadRsrc(String res, JsonpDeserializer<T> deser) {
         InputStream is = this.getClass().getResourceAsStream(res);
         assertNotNull(is, "Resource not found: " + res);

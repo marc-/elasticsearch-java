@@ -1,0 +1,29 @@
+{
+   "_shards" : {
+      "failed" : 0,
+      "skipped" : 159,
+      "successful" : 162,
+      "total" : 162
+   },
+   "aggregations" : {
+      "boxplot#ed_stats" : {
+         "lower" : 248,
+         "max" : 1176,
+         "min" : 248,
+         "q1" : 286.5,
+         "q2" : 314,
+         "q3" : 376.5,
+         "upper" : 499
+      }
+   },
+   "hits" : {
+      "hits" : [],
+      "max_score" : 0,
+      "total" : {
+         "relation" : "eq",
+         "value" : 51
+      }
+   },
+   "timed_out" : false,
+   "took" : 207
+}
